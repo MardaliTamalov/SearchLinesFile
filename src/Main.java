@@ -29,16 +29,22 @@ public class Main {
         while (bufferedReader.readLine() != null) {
             countLines++;
         }
-        System.out.println(countLines);
+        System.out.println("Всего строк в файле: " + countLines + ";");
 
         FileReader fileReader = new FileReader("C:\\Users\\Администратор\\Downloads\\QAtest.txt");
         int a;
-        long countLetters = 10;
+        long rusCountLetters = 0;
+        long enCountLetters = 0;
+
         while ((a = fileReader.read()) != -1) {
-            if ((char) a == 'a')
-                countLetters++;
+            if ((char) a == 'а' )
+                rusCountLetters++;
+            if ((char) a == 'a' )
+                enCountLetters++;
         }
-        System.out.println(countLetters);
+        System.out.println("Русской буквы «а» в файле: " + rusCountLetters + ";");
+        System.out.println("Английской буквы «а» в файле: " + enCountLetters + ";");
+        System.out.println("Всего буквы «а» в файле: " + (rusCountLetters + enCountLetters) + ";");
     }
 }
 
